@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ListefichefraisComponent } from './listefichefrais/listefichefrais.component';
-import { FicheFraisService} from "./service/fichefrais.service";
+import { FichefraisService} from "./service/fichefrais.service";
 import { Fichefrais} from "./metier/fichefrais";
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
@@ -23,7 +23,7 @@ import {HttpClientModule} from "@angular/common/http";
     HttpClientModule
   ],
   providers: [
-    FicheFraisService
+    FichefraisService
   ],
   bootstrap: [AppComponent]
 })
