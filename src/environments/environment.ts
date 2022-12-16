@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  ENDPOINT:"http://localhost/bastasi/ProjetWSGsb/public"
+  ENDPOINT:"http://localhost/bastasi/ProjetWSGsb/public/"
 };
 
 /*

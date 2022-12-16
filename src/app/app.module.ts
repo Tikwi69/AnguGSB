@@ -8,13 +8,18 @@ import { FichefraisService} from "./service/fichefrais.service";
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { ConnexionComponent } from './connexion/connexion.component';
+import {VisiteurService} from "./service/visiteur.service";
+import {AjoutFicheFraisComponent} from "./ajout-fiche-frais/ajout-fiche-frais.component";
+import {FichefraisComponent} from "./fichefrais/fichefrais.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     ListefichefraisComponent,
-    ConnexionComponent
+    ConnexionComponent,
+    FichefraisComponent,
+    AjoutFicheFraisComponent
   ],
   imports: [
     FormsModule,
@@ -23,7 +28,8 @@ import { ConnexionComponent } from './connexion/connexion.component';
     HttpClientModule
   ],
   providers: [
-    FichefraisService
+    FichefraisService,
+    VisiteurService
   ],
   bootstrap: [AppComponent]
 })

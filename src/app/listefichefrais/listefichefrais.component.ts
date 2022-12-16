@@ -12,8 +12,8 @@ import { HttpHeaders } from '@angular/common/http';
 export class ListefichefraisComponent implements OnInit {
 
   public mesFrais: Fichefrais[]=[];
-  private error: string='';
-  private id: number=1;
+  private error: string="";
+  private id: number=0;
   private titre: string="";
   private unFrais: Fichefrais=new Fichefrais();
 
@@ -25,7 +25,7 @@ export class ListefichefraisComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // let item = LocaLStorage.getItem('id');
+    let item = localStorage.getItem('id');
     this.id = 1;
     this.titre = 'Liste des frais du visiteur ' + this.id;
     this.getFicheFraisListe(this.id);
@@ -41,6 +41,28 @@ export class ListefichefraisComponent implements OnInit {
         this.error = error.messages;
       }
     )
+  }
+
+  supprimer(unFrais:Fichefrais):void {
+    this.unFS.deleteFrais(unFrais).subscribe(
+      ()=>{
+
+      },
+      (error)=>{
+        this.error=error.messages;
+      }
+    );
+    if (this.error!='')
+      alert("Erreur survenue : "+this.error)
+    else
+      alert("Suppression réussie ! ")
+    this.unRouteur.navigate(['/accueil']);
+
+
+  }
+
+  modifier(id_frais: number) :void{
+    this.unRouteur.navigate(['/modifierFrais/'+id_frais]);
   }
 
 }

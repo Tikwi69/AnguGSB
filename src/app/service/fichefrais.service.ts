@@ -39,4 +39,36 @@ export class FichefraisService {
     console.error(errMsg);
     return Promise.reject(error.message || error);
   }
+
+  getFicheFrais(id:number):Observable<any>{
+    this.ClientUrl= environment.ENDPOINT+'api/frais/getUnFrais/'+id;
+    return this.httpClient.get(this.ClientUrl);
+  }
+  getFichefraisListe(id:number): Observable<any>
+  {
+    this.ClientUrl= environment.ENDPOINT+'api/frais/listeFrais/'+id;
+    return this.httpClient.get(this.ClientUrl);
+  }
+
+  updateFrais(unFrais:Fichefrais):Observable<any>{
+    this.ClientUrl= environment.ENDPOINT +'api/frais/updateFicheFrais';
+
+
+    return this.httpClient.post(this.ClientUrl,JSON.stringify(unFrais));
+  }
+
+  deleteFrais(unFrais:Fichefrais):Observable<any>{
+    this.ClientUrl= environment.ENDPOINT +'api/frais/deleteFicheFrais';
+
+
+    return this.httpClient.post(this.ClientUrl,JSON.stringify(unFrais));
+  }
+
+
+  addFrais(unFrais:Fichefrais):Observable<any>{
+    this.ClientUrl= environment.ENDPOINT +'api/frais/addFicheFrais';
+
+
+    return this.httpClient.post(this.ClientUrl,JSON.stringify(unFrais));
+  }
 }
