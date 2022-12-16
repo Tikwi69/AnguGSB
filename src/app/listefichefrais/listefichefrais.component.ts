@@ -14,7 +14,7 @@ export class ListefichefraisComponent implements OnInit {
   public mesFrais: Fichefrais[]=[];
   private error: string="";
   private id: number=0;
-  private titre: string="";
+  public titre: string="";
   private unFrais: Fichefrais=new Fichefrais();
 
   constructor( private unFS: FichefraisService, private unRouteur: Router) {
